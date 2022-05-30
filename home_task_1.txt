@@ -1,0 +1,102 @@
+1) Посмотреть где я
+pwd
+
+2) Создать папку
+mkdir foldername
+
+3) Зайти в папку
+cd foldername
+
+4) Создать 3 папки
+mkdir foldername1 foldername2 foldername3
+
+5) Зайти в любую папку
+cd foldername
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch 1.txt 2.txt 3.txt 4.json 5.json
+
+7) Создать 3 папки
+mkdir foldername1 foldername2 foldername3
+
+8) Вывести список содержимого
+ls -la
+dir -la
+
+9) + Открыть любой txt файл
+less filename
+vi filename
+cat filename
+cat > filename (ctrl + z save&exit)
+cat >> filename (ctrl + z save&exit)
+
+10) + написать туда что-нибудь, любой текст.
+done
+press i for vim
+
+11) + сохранить и выйти.
+ctrl+z
+press esc -> :w (save) -> :q (quit)
+
+12) Выйти из папки на уровень выше
+cd ..
+-
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv file1 file2 foldername
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp file1 file2 foldername
+
+15) Найти файл по имени
+find . -name filename
+find . -name "*.txt"
+fing . -type d -name "foldername*"
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+grep data filename (the data depends on register)
+grep -i data filename (the data doesn't depend on register)
+grep -v data filename (the result will be output without "data" row)
+grep -c data filename (count the number of matching data rows)
+grep -R data foldername (find the data in the folder of many files)
+
+17) вывести несколько первых строк из текстового файла
+head filename (output the first 10 rows)
+head -n 5 filename (output the firsst 5 rows)
+
+18) вывести несколько последних строк из текстового файла
+tail filename (output the last 10 rows)
+tail -n 5 filename (output the last 5 rows)
+ls path/path | tail -n 3 (the last 3 files in the path/path)
+tail -f filename (real time output in the terminal - ctrl+c to abord)
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less filename
+	/text - find text to down
+	?text - find text to up
+	ctrl+g - main info about file
+	h - hints
+
+20) вывести дату и время
+date
+date -u (utc)
+date +'%e.%m.%Y' - 24.05.2022
+date +'%e.%m.%y' - 24.05.22
+date +'%a %d.%m.%G %R' - Tue 24.05.2022 10:11
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request (output to console)
+curl -o newfile http://162.55.220.72:5005/terminal-hw-request (save to file)
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+cd folder_1
+mkdir f1 f2 f3
+cd f3
+touch 01.txt 02.txt 03.txt 04.json 05.json
+mkdir pap1 pap2 pap3
+ls -l
+mv 01.txt 04.json pap3
